@@ -67,5 +67,5 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "太空射擊遊戲.slnx"
+    "dotnet.defaultSolution": "Space.slnx"
 }
