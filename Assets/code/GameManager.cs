@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
     {
         currentScore += value;
         UpdateScoreUI();
-        if(currentScore >= WinScore)
+        if (currentScore >= WinScore)
         {
             End(true);
         }
@@ -66,9 +66,14 @@ public class GameManager : MonoBehaviour
         scoreText.text = "Score : " + currentScore;
     }
 
+    public void PlayerDied()
+    {
+        End(false);
+    }
+
     void End(bool isWin)
     {
-        if(isWin)
+        if (isWin)
         {
             SceneManager.LoadScene(winSceneName);
         }

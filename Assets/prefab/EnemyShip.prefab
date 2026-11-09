@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 8393415807904419476}
   - component: {fileID: 3516173687136656291}
   - component: {fileID: 7617432578531693342}
-  - component: {fileID: 3249681345268443794}
+  - component: {fileID: 3791405275213228391}
+  - component: {fileID: 7238959855308911335}
   m_Layer: 0
   m_Name: EnemyShip
   m_TagString: Ship
@@ -172,7 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ContinuousVelocity
   velocity: {x: 0, y: -2}
---- !u!114 &3249681345268443794
+--- !u!114 &3791405275213228391
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -181,9 +182,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1943826598585170876}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a93587c623717694182d6047ec8dc017, type: 3}
+  m_Script: {fileID: 11500000, guid: 98365f35c0c67d144af36de0a64f0b65, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BulletDamage
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
+  maxHealth: 3
+--- !u!114 &7238959855308911335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943826598585170876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adaeb27eb3ed8324ca3000ee7974747a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyContactDamage
+  damage: 1
+  destroySelfOnHit: 1
 --- !u!1 &5823348890111852364
 GameObject:
   m_ObjectHideFlags: 0
