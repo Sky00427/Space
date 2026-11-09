@@ -1,27 +1,44 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerFire : MonoBehaviour
 {
     public Transform firePos;
-    // Bullet Prefab
     public GameObject bullet;
     public AudioSource audioSource;
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField] private InputActionReference fireAction;
+
+    void OnEnable()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
+        fireAction.action.performed += OnFirePerformed;
 
-            Fire();
-
-        }
+        fireAction.action.Enable();
     }
+
+    void OnDisable()
+    {
+        fireAction.action.performed -=
+            OnFirePerformed;
+
+        fireAction.action.Disable();
+    }
+
+    void OnFirePerformed(
+        InputAction.CallbackContext context
+    )
+    {
+        Fire();
+    }
+
     public void Fire()
     {
         audioSource.Play();
-        Instantiate(bullet, firePos.position, Quaternion.identity);
+
+        Instantiate(
+            bullet,
+            firePos.position,
+            Quaternion.identity
+        );
     }
 }

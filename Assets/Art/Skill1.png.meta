@@ -78,7 +78,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 90
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -337,28 +337,6 @@ TextureImporter:
       bones: []
       spriteID: dab50e886c58ba640800000000000000
       internalID: 5092310891418901421
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Unity_Q%E6%8A%80%E8%83%BD_%E9%A3%9B%E5%BD%88%E7%88%86%E7%82%B8_8%E5%B9%80_1920x1080_9
-      rect:
-        serializedVersion: 2
-        x: 1712
-        y: 122
-        width: 8
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 64e58cfd9572aa540800000000000000
-      internalID: 5019868001617862214
       vertices: []
       indices: 
       edges: []

@@ -1,20 +1,34 @@
 using UnityEngine;
-using TMPro;
 using UnityEngine.SceneManagement;
+using System;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
     public GameObject player;
+
+    [Header("Game Time")]
+    [SerializeField, Min(1f)]
+    private float gameDuration = 60f;
+
+    [SerializeField]
+    private float remainingTime;
+
+    private bool isGameEnded;
+
+    public float GameDuration => gameDuration;
+    public float RemainingTime => remainingTime;
+
     [Header("Score")]
     public int currentScore = 0;
 
-    public int WinScore;
+    public int CurrentScore => currentScore;
+
+    public event Action<int> OnScoreChanged;
 
     public string winSceneName;
     public string loseSceneName;
-    public TMP_Text scoreText;
     void Awake()
     {
         instance = this;
@@ -22,17 +36,31 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        UpdateScoreUI();
+        remainingTime = gameDuration;
+    }
+
+    void Update()
+    {
+        if (isGameEnded)
+            return;
+
+        remainingTime = Mathf.Max(remainingTime - Time.deltaTime, 0f);
+
+        if (remainingTime <= 0f)
+        {
+            TimeUp();
+        }
+    }
+
+    void TimeUp()
+    {
+        End(true);
     }
 
     public void AddScore(int value)
     {
         currentScore += value;
-        UpdateScoreUI();
-        if (currentScore >= WinScore)
-        {
-            End(true);
-        }
+        OnScoreChanged?.Invoke(currentScore);
     }
 
     public void AddExperience(int value)
@@ -43,10 +71,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void UpdateScoreUI()
-    {
-        scoreText.text = "Score : " + currentScore;
-    }
+    
 
     public void PlayerDied()
     {
@@ -55,6 +80,10 @@ public class GameManager : MonoBehaviour
 
     void End(bool isWin)
     {
+        if (isGameEnded) return;
+
+        isGameEnded = true;
+
         if (isWin)
         {
             SceneManager.LoadScene(winSceneName);

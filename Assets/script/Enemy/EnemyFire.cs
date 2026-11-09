@@ -1,21 +1,68 @@
 using UnityEngine;
-using System.Collections;
 
 public class EnemyFire : MonoBehaviour
 {
     public GameObject bullet;
 
-    public float interval = 2;
+    public float interval = 2f;
+
+    [SerializeField, Min(0.1f)]
+    private float projectileSpeed = 8f;
+
+    private Transform playerTarget;
+    private EnemyShipMovement enemyMovement;
 
     void Start()
     {
-        InvokeRepeating("Fire", interval, interval);
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+
+        if (playerObject != null)
+        {
+            playerTarget = playerObject.transform;
+        }
+        else
+        {
+            Debug.LogWarning("EnemyFire 找不到 Player Tag 物件。");
+        }
+
+        enemyMovement = GetComponentInParent<EnemyShipMovement>();
+
+        InvokeRepeating(nameof(Fire), interval, interval);
+    }
+
+    void OnDisable()
+    {
+        CancelInvoke();
     }
 
     void Fire()
     {
-        GameObject g = Instantiate(bullet, transform.position, Quaternion.identity);
+        if (playerTarget == null) return;
 
-        Physics2D.IgnoreCollision(g.GetComponent<Collider2D>(), transform.parent.GetComponent<Collider2D>());
+        if (enemyMovement != null && !enemyMovement.HasReachedStopPosition)
+        {
+            return;
+        }
+
+        Vector2 direction = (playerTarget.position - transform.position).normalized;
+
+        GameObject projectile = Instantiate(
+            bullet,
+            transform.position,
+            Quaternion.identity
+        );
+        projectile.transform.up = direction;
+
+        Rigidbody2D projectileRigidbody = projectile.GetComponent<Rigidbody2D>();
+
+        if (projectileRigidbody == null)
+        {
+            Debug.LogError("Enemy Projectile 沒有 Rigidbody2D。");
+
+            Destroy(projectile);
+            return;
+        }
+
+        projectileRigidbody.linearVelocity = direction * projectileSpeed;
     }
 }

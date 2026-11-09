@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4429723809650314255}
   - component: {fileID: 1935450012221629289}
   - component: {fileID: -6768005008436652833}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PlayerBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -7509381387061955075, guid: fe8217110fe97e641ba4698b0d8eb187, type: 3}
+  m_Sprite: {fileID: 1685533157, guid: 8ddd454f94323244098c061b37c5c5f2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -133,13 +133,13 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.29666665, y: 1.1233333}
     newSize: {x: 0.5, y: 0.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.1, y: 0.5}
+  m_Size: {x: 0.29666665, y: 1.1233333}
   m_EdgeRadius: 0
 --- !u!50 &4429723809650314255
 Rigidbody2D:
@@ -193,3 +193,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a93587c623717694182d6047ec8dc017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DealingDamage
+  damage: 1

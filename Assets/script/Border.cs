@@ -6,7 +6,9 @@ public class Border : MonoBehaviour
 {
     void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.gameObject.name != "PlayerShip")
+        if (!coll.gameObject.CompareTag("Player"))
+        {
             Destroy(coll.gameObject);
+        }
     }
 }

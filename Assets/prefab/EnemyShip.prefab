@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 4337476903835639394}
   - component: {fileID: 8393415807904419476}
   - component: {fileID: 3516173687136656291}
-  - component: {fileID: 7617432578531693342}
   - component: {fileID: 3791405275213228391}
   - component: {fileID: 7238959855308911335}
-  m_Layer: 0
+  - component: {fileID: 4470188104528344306}
+  m_Layer: 6
   m_Name: EnemyShip
   m_TagString: Ship
   m_Icon: {fileID: 0}
@@ -160,19 +160,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &7617432578531693342
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1943826598585170876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f485126dfdfee84396c5c5c9ef889ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ContinuousVelocity
-  velocity: {x: 0, y: -2}
 --- !u!114 &3791405275213228391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,6 +188,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyContactDamage
   damage: 1
   destroySelfOnHit: 1
+--- !u!114 &4470188104528344306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943826598585170876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abd99223ed6e8df41ae13d3313825e41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyShipMovement
+  moveSpeed: 2
+  stopY: 5.5
 --- !u!1 &5823348890111852364
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,7 +212,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1393839935560801566}
   - component: {fileID: 961661403316714827}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BulletSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
@@ -246,4 +247,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FireEnemy
   bullet: {fileID: 8396155411048064230, guid: de9c762a8c173a241b77a41646e2ea89, type: 3}
-  interval: 0.5
+  interval: 3.5
+  projectileSpeed: 8

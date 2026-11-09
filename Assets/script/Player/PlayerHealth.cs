@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [SerializeField] private PlayerInvincibility playerInvincibility;
     [Header("Health")]
     public int maxHealth = 3;
 
-    [SerializeField]
-    private int currentHealth;
-
-    [SerializeField] private int invincibleDuration;
-    [SerializeField] private bool isInvincible = false;
+    [SerializeField] private int currentHealth;
 
 
     private bool isDead;
@@ -20,7 +16,6 @@ public class PlayerHealth : MonoBehaviour
     public int MaxHealth => maxHealth;
 
     public Action OnHealthChanged;
-
 
     void Start()
     {
@@ -35,24 +30,18 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        if (isDead || damage <= 0 || isInvincible) return;
-
+        if (isDead || damage <= 0 || playerInvincibility.IsInvincible) return;
         currentHealth = Mathf.Max(currentHealth - damage, 0);
-        StartCoroutine(InvincibleTimer(invincibleDuration));
-
         Debug.Log($"Player Health: {currentHealth}/{maxHealth}");
+        OnHealthChanged?.Invoke();
 
         if (currentHealth <= 0)
         {
             Die();
+            return;
         }
-        OnHealthChanged.Invoke();
-    }
-    IEnumerator InvincibleTimer(int duration)
-    {
-        isInvincible = true;
-        yield return new WaitForSeconds(duration);
-        isInvincible = false;
+
+        playerInvincibility.Activate();
     }
 
     void Die()

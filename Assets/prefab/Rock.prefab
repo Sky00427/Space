@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 4317904361280623549}
   - component: {fileID: 875557006470788227}
   - component: {fileID: 4482505862638255339}
-  - component: {fileID: 1641333477143516011}
   - component: {fileID: 1549082327597243876}
   - component: {fileID: 5128596179114012488}
-  m_Layer: 0
+  - component: {fileID: 4087231925778676684}
+  m_Layer: 6
   m_Name: Rock
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -159,19 +159,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1641333477143516011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1283000697891812774}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f485126dfdfee84396c5c5c9ef889ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ContinuousVelocity
-  velocity: {x: 0, y: -4}
 --- !u!114 &1549082327597243876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,3 +187,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyContactDamage
   damage: 1
   destroySelfOnHit: 1
+--- !u!114 &4087231925778676684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283000697891812774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 142a1952e16f1484b8a224a9276d65ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RockMovement
+  moveSpeed: 4

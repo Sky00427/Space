@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 363335405786029747}
   - component: {fileID: 1317568592425632753}
   - component: {fileID: 4429723809650314255}
-  - component: {fileID: 1935450012221629289}
   - component: {fileID: 5558850643949501210}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemyBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,12 +84,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -8452331321771674448, guid: d31b57a470ab3e441845074f52012e25, type: 3}
+  m_Sprite: {fileID: 464056698, guid: 9feb1fde20e64e54598ef2ff5ad9c0cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.5, y: 0.5}
+  m_Size: {x: 2.56, y: 7.05}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -133,13 +132,13 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5, y: 0.5}
-    newSize: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.85333335, y: 2.35}
+    newSize: {x: 2.56, y: 7.05}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.1, y: 0.5}
+  m_Size: {x: 0.85333335, y: 2.35}
   m_EdgeRadius: 0
 --- !u!50 &4429723809650314255
 Rigidbody2D:
@@ -168,19 +167,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1935450012221629289
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8396155411048064230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f485126dfdfee84396c5c5c9ef889ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ContinuousVelocity
-  velocity: {x: 0, y: -10}
 --- !u!114 &5558850643949501210
 MonoBehaviour:
   m_ObjectHideFlags: 0
