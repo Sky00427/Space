@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 363335405786029747}
   - component: {fileID: 1317568592425632753}
   - component: {fileID: 4429723809650314255}
-  - component: {fileID: 1935450012221629289}
+  - component: {fileID: 5614566707284507796}
   m_Layer: 9
   m_Name: PlayerBomb
   m_TagString: Untagged
@@ -124,7 +124,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -138,7 +138,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.29666665, y: 1.1233333}
+  m_Size: {x: 0.85333335, y: 2.35}
   m_EdgeRadius: 0
 --- !u!50 &4429723809650314255
 Rigidbody2D:
@@ -165,9 +165,9 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &1935450012221629289
+--- !u!114 &5614566707284507796
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -176,7 +176,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8396155411048064230}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f485126dfdfee84396c5c5c9ef889ec, type: 3}
+  m_Script: {fileID: 11500000, guid: 30dedfab9b88a934d874c095f0e5ef63, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ContinuousVelocity
-  velocity: {x: 0, y: 22}
+  m_EditorClassIdentifier: Assembly-CSharp::BombProjectile
+  moveSpeed: 22
+  lifetime: 5
+  explosionPrefab: {fileID: 8396155411048064230, guid: 4b115066b4af9fc4eaedcda2af4a2322, type: 3}

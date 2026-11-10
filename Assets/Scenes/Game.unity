@@ -523,7 +523,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 15, y: 20, z: 1}
+  m_LocalScale: {x: 35, y: 20, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 782062946}
@@ -672,8 +672,8 @@ MonoBehaviour:
   - {fileID: 1283000697891812774, guid: 7addd860adfcc5d41be48194bf90967c, type: 3}
   firstSpawnDelay: 1
   spawnInterval: 3
-  minX: -6
-  maxX: 6
+  minX: -15
+  maxX: 15
 --- !u!1 &390909824
 GameObject:
   m_ObjectHideFlags: 0
@@ -814,10 +814,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1267,7 +1267,7 @@ Transform:
   m_GameObject: {fileID: 994702778}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.92078, y: 1.78448, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1767,6 +1767,7 @@ GameObject:
   - component: {fileID: 1641756642}
   - component: {fileID: 1641756638}
   - component: {fileID: 1641756643}
+  - component: {fileID: 1641756644}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2047,6 +2048,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FirePlayer
   firePos: {fileID: 1272926063}
   bullet: {fileID: 8396155411048064230, guid: 91cc8e802d3c9854a80a5be15b4df982, type: 3}
+  fireEffectPrefab: {fileID: 7243353420400766722, guid: a194233e021693845b968188863f048a, type: 3}
   audioSource: {fileID: 1641756638}
   fireAction: {fileID: 5777170757307621361, guid: 3590b91b4603b465dbb4216d601bff33, type: 3}
 --- !u!114 &1641756640
@@ -2109,13 +2111,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerBombAbility
   playerLevel: {fileID: 1641756641}
   bombAction: {fileID: 7315198112512738606, guid: 3590b91b4603b465dbb4216d601bff33, type: 3}
-  unlockLevel: 5
-  damageRadius: 3
-  damage: 3
+  firePos: {fileID: 1272926063}
+  bombPrefab: {fileID: 8396155411048064230, guid: 8351465d5fc591740b36b36abc89fcbd, type: 3}
+  unlockLevel: 2
   cooldown: 5
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 64
+--- !u!114 &1641756644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641756630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cf8ea0eff13dbb48bee943ddd76d6d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerOverloadAbility
+  playerLevel: {fileID: 1641756641}
+  overloadAction: {fileID: 3158727600816466731, guid: 3590b91b4603b465dbb4216d601bff33, type: 3}
+  firePos: {fileID: 1272926063}
+  laserPrefab: {fileID: 50428876345094235, guid: 77e640ed9abc50b4b9cd155f286d4286, type: 3}
+  unlockLevel: 3
+  cooldown: 10
 --- !u!1 &2119724200
 GameObject:
   m_ObjectHideFlags: 0
@@ -2202,7 +2219,7 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 264970152}
   - {fileID: 2119724203}
-  - {fileID: 464566720}
   - {fileID: 994702780}
+  - {fileID: 464566720}
   - {fileID: 1641756633}
   - {fileID: 384636505}

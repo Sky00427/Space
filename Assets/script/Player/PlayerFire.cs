@@ -5,6 +5,7 @@ public class PlayerFire : MonoBehaviour
 {
     public Transform firePos;
     public GameObject bullet;
+    [SerializeField] private GameObject fireEffectPrefab;
     public AudioSource audioSource;
 
     [SerializeField] private InputActionReference fireAction;
@@ -34,6 +35,13 @@ public class PlayerFire : MonoBehaviour
     public void Fire()
     {
         audioSource.Play();
+
+        Instantiate(
+            fireEffectPrefab,
+            firePos.position,
+            firePos.rotation,
+            firePos
+        );
 
         Instantiate(
             bullet,

@@ -2,18 +2,18 @@ using UnityEngine;
 
 public class RandomEnemySpawner : MonoBehaviour
 {
-    [Header("Enemy Prefabs")]
+    [Header("敵人")]
     [SerializeField]
     private GameObject[] enemyPrefabs;
 
-    [Header("Spawn Time")]
+    [Header("生成設定")]
     [SerializeField, Min(0f)]
     private float firstSpawnDelay = 1f;
 
     [SerializeField, Min(0.1f)]
     private float spawnInterval = 2f;
 
-    [Header("Horizontal Spawn Range")]
+    [Header("生成範圍")]
     [SerializeField]
     private float minX = -3f;
 

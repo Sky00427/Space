@@ -194,3 +194,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DealingDamage
   damage: 1
+  hitEffectPrefab: {fileID: 7243353420400766722, guid: 35b9511d7177df940b40a2ddabc4a24c, type: 3}
