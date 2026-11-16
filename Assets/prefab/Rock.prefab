@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   experienceValue: 1
-  maxHealth: 2
+  maxHealth: 3
 --- !u!114 &5128596179114012488
 MonoBehaviour:
   m_ObjectHideFlags: 0

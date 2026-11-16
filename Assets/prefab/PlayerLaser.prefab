@@ -104,11 +104,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82a0a54eebead6f43a005d30b2da1c06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerLaserBeam
-  damage: 1
-  damageInterval: 0.25
+  damage: 10
+  damageInterval: 0.2
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
-  beamWidth: 0.9
+  beamWidth: 2
   beamLength: 17.25
-  duration: 3
+  duration: 6
