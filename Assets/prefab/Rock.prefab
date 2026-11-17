@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   experienceValue: 1
-  maxHealth: 3
+  maxHealth: 5
 --- !u!114 &5128596179114012488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adaeb27eb3ed8324ca3000ee7974747a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyContactDamage
-  damage: 1
+  damage: 2
   destroySelfOnHit: 1
 --- !u!114 &4087231925778676684
 MonoBehaviour:

@@ -254,7 +254,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -708, y: -389.41956}
+  m_AnchoredPosition: {x: 671, y: 393}
   m_SizeDelta: {x: 279.5653, y: 65.913}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &216436552
@@ -1073,8 +1073,8 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 1943826598585170876, guid: a8cbc4e460431d1448a757a9b309137e, type: 3}
   - {fileID: 1283000697891812774, guid: 7addd860adfcc5d41be48194bf90967c, type: 3}
-  firstSpawnDelay: 10
-  spawnInterval: 2
+  firstSpawnDelay: 15
+  spawnInterval: 1.5
   minX: -15
   maxX: 15
 --- !u!4 &625436215
@@ -1304,7 +1304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   player: {fileID: 1641756630}
-  gameDuration: 99
+  gameDuration: 100
   remainingTime: 0
   currentScore: 0
   winSceneName: GameWin
@@ -1745,7 +1745,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -920, y: -490}
+  m_AnchoredPosition: {x: 444, y: 483}
   m_SizeDelta: {x: 450, y: 45}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1606338276
@@ -2146,7 +2146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1fdad7405be3cf4f9361a91b2496544, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInvincibility
-  invincibleDuration: 2
+  invincibleDuration: 1
   blinkInterval: 0.1
   playerSpriteRenderer: {fileID: 1641756632}
   isInvincible: 0
@@ -2167,7 +2167,7 @@ MonoBehaviour:
   firePos: {fileID: 1272926063}
   bombPrefab: {fileID: 8396155411048064230, guid: 8351465d5fc591740b36b36abc89fcbd, type: 3}
   unlockLevel: 3
-  cooldown: 2.5
+  cooldown: 2
 --- !u!114 &1641756644
 MonoBehaviour:
   m_ObjectHideFlags: 0
